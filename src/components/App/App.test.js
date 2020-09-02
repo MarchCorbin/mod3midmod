@@ -54,9 +54,11 @@ fireEvent.click(submitButton)
 
 const songName = await waitFor(() => screen.getByText('Fly Like Bird'))
 const artistName = await waitFor(() => screen.getByText('Nelly Furtado'))
+const linkage = await waitFor(() => screen.getByText('bestModernClassics.biz'))
 
 
 expect(songName).toBeInTheDocument()
 expect(artistName).toBeInTheDocument()
+expect(linkage).toBeInTheDocument()
   })
 })
