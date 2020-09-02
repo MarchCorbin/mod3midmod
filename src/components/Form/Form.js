@@ -14,7 +14,7 @@ class Form extends React.Component {
     this.setState({[event.target.name]:event.target.value })
   }
 
-  clearInputs() {
+  clearInputs = () => {
     return this.setState({songName:'', artistName:'', link:''})
   }
 
@@ -24,7 +24,7 @@ class Form extends React.Component {
     let artistName = this.state.artistName
     let link = this.state.link
     this.props.addSong(songName, artistName, link)
-      await this.clearInputs()
+    this.clearInputs()
   }
 
   render() {
@@ -32,7 +32,7 @@ class Form extends React.Component {
       <input placeholder="Song Name" name="songName" className='song-name' onChange={this.handleChange} />
       <input placeholder='Artist Name' name="artistName" className='Artists Name' onChange={this.handleChange}/>
       <input placeholder='Link' name="link" className='link' onChange={this.handleChange} />
-      <button onClick={this.handleSubmit} >Add Song!</button>
+      <button onClick={this.handleSubmit}>Add Song!</button>
     </form>
   }
 }

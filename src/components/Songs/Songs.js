@@ -10,17 +10,10 @@ class Songs extends React.Component {
     }
   }
 
-  componentDidMount() {
-    
-  }
-
   mapSongs = () => {
-// this.props.allSongs.length > 1 &&
-// this.setState({allsongs: this.props.allSongs
-// })
     return this.props.allSongs.map(song => 
     <Card
-    name={song.songname}
+    songname={song.songName}
     artist={song.artistName}
     link={song.link}
     id={song.id}
